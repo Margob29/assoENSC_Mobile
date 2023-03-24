@@ -9,8 +9,12 @@ export default function EventCard(props) {
       <View style={styles.cardContainer}>
         <View style={styles.titleCard}>
           <Text style={styles.title}>Interpromo</Text>
-          {/* <Image style={styles.image} source={{ uri: props.url }}></Image> */}
         </View>
+        <Image
+          style={styles.cardImage}
+          source={require("../assets/interpromo.jpg")}
+        ></Image>
+        <Text style={styles.textDate}>01/07/2019</Text>
         <View style={styles.cardBottom}>
           <DeleteButton />
         </View>

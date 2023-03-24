@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
     margin: 10,
     width: "50%",
     alignItems: "center",
+    backgroundColor: "#efefef",
   },
 
   deleteText: {
@@ -42,6 +43,18 @@ const styles = StyleSheet.create({
     width: "100%",
     alignItems: "center",
     borderRadius: 10,
+  },
+
+  cardImage: {
+    height: 200,
+    width: "90%",
+    margin: 15,
+  },
+
+  textDate: {
+    fontSize: 20,
+    color: "grey",
+    marginBottom: 10,
   },
 });
 
