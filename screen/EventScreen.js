@@ -1,7 +1,7 @@
 import { React, useState } from "react";
-import { Text, View, Button } from "react-native";
-import EventCardList from "../components/EventCardList";
+import { Text, View, Button, FlatList } from "react-native";
 import styles from "../theme/styles";
+import EventCard from "../components/EventCard";
 
 export default function EventScreen() {
   const [eventsList, setEventsList] = useState([]);
@@ -14,5 +14,10 @@ export default function EventScreen() {
     .catch((error) => {
       console.error(error);
     });
-  return <EventCardList eventsList={eventsList} />;
+  return (
+    <FlatList
+      data={eventsList}
+      renderItem={({ item }) => <EventCard name={item.name} />}
+    />
+  );
 }
