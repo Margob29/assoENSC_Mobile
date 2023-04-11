@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
     margin: 20,
     borderRadius: 10,
     alignItems: "center",
+    backgroundColor: "#fff",
   },
 
   titleCard: {
@@ -55,6 +56,12 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: "grey",
     marginBottom: 10,
+  },
+
+  pageTitle: {
+    fontSize: 30,
+    backgroundColor: "#560067",
+    textAlign: "center",
   },
 });
 

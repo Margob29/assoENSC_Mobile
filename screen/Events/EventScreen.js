@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import { Text, View, Button, FlatList } from "react-native";
-import styles from "../theme/styles";
-import EventCard from "../components/EventCard";
+import styles from "../../theme/styles";
+import EventCard from "../../components/EventCard";
 
 export default function EventScreen() {
   const [eventsList, setEventsList] = useState([]);
