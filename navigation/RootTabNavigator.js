@@ -12,7 +12,7 @@ const Nav = createBottomTabNavigator();
 
 export default function RootTabNavigator() {
   return (
-    <NavigationContainer>
+    <NavigationContainer independent={true}>
       <StatusBar backgroundColor="#560067" />
       <Nav.Navigator
         style={styles.navbarStyle}

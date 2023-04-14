@@ -13,7 +13,7 @@ const Home = (props) => {
   const image = require("../assets/campus.jpg");
 
   const goTo = (root) => {
-    props.navigation.push(root);
+    props.navigation.navigate(root);
   };
 
   return (
@@ -22,7 +22,7 @@ const Home = (props) => {
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
-          goTo("EventScreen");
+          goTo("RootTabNavigator");
         }}
       >
         <Image source={image} style={styles.image} />
@@ -36,13 +36,13 @@ const Home = (props) => {
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
-          goTo("EventScreen");
+          //goTo("RootTabNavigator");
         }}
       >
         <Image source={image} style={styles.image} />
         <View style={styles.buttonContainer}>
           <Ionicons name={"people-outline"} size={25} color={"#560067"} />
-          <Text style={styles.textButton}>Nos clubs</Text>
+          <Text style={styles.textButton}>Les clubs</Text>
           <Ionicons name={"people-outline"} size={25} color={"#560067"} />
         </View>
       </TouchableOpacity>
@@ -50,7 +50,7 @@ const Home = (props) => {
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
-          goTo("EventScreen");
+          // goTo("RootTabNavigator");
         }}
       >
         <Image source={image} style={styles.image} />

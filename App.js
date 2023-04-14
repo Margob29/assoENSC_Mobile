@@ -4,6 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./screen/Home";
 import EventScreen from "./screen/Events/EventScreen";
+import RootTabNavigator from "./navigation/RootTabNavigator";
 
 export default App = () => {
   const Stack = createNativeStackNavigator();
@@ -17,8 +18,8 @@ export default App = () => {
         />
         <Stack.Screen
           options={{ headerShown: false }}
-          name="EventScreen"
-          component={EventScreen}
+          name="RootTabNavigator"
+          component={RootTabNavigator}
         />
       </Stack.Navigator>
     </NavigationContainer>
