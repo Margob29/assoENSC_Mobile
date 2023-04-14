@@ -4,6 +4,16 @@ import styles from "../theme/styles";
 import DeleteButton from "./DeleteButton";
 
 export default function EventCard(props) {
+  const deleteEvent = () => {
+    console.log(props.id);
+    fetch(
+      `https://enscmobilebureau.azurewebsites.net/api/EventApi/${props.id}`,
+      {
+        method: "DELETE",
+      }
+    ).then(console.log("c'est fait"));
+  };
+
   return (
     <View>
       <View style={styles.cardContainer}>
@@ -16,7 +26,7 @@ export default function EventCard(props) {
         ></Image>
         <Text style={styles.textDate}>01/07/2019</Text>
         <View style={styles.cardBottom}>
-          <DeleteButton />
+          <DeleteButton onPress={deleteEvent} />
         </View>
       </View>
     </View>

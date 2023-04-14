@@ -39,6 +39,17 @@ const styles = StyleSheet.create({
     margin: 10,
   },
 
+  addButton: {
+    position: "absolute",
+    top: 520,
+    right: 20,
+    borderRadius: 50,
+    backgroundColor: "white",
+    padding: -10,
+    zIndex: 1,
+    elevation: 2,
+  },
+
   cardBottom: {
     backgroundColor: "#efefef",
     width: "100%",
@@ -62,6 +73,63 @@ const styles = StyleSheet.create({
     fontSize: 30,
     backgroundColor: "#560067",
     textAlign: "center",
+  },
+
+  titleForm: {
+    fontSize: 50,
+    textAlign: "center",
+    color: "#560067",
+    marginBottom: 20,
+  },
+
+  catchyWordsForm: {
+    fontSize: 30,
+    textAlign: "center",
+    marginBottom: 30,
+  },
+
+  labelForm: {
+    textAlign: "center",
+    fontSize: 20,
+    marginBottom: 10,
+  },
+
+  inputForm: {
+    height: 50,
+    borderWidth: 3,
+    width: "70%",
+    borderRadius: 30,
+    marginBottom: 30,
+  },
+
+  formContainer: {
+    flex: 1,
+    alignItems: "center",
+  },
+
+  validateButton: {
+    borderColor: "blue",
+    borderWidth: 2,
+    borderRadius: 15,
+    margin: 10,
+    width: "70%",
+    alignItems: "center",
+    backgroundColor: "blue",
+  },
+
+  validateText: {
+    color: "white",
+    fontSize: 20,
+    margin: 10,
+    textAlign: "center",
+  },
+
+  selectForm: {
+    height: 50,
+    borderWidth: 3,
+    width: "50%",
+    borderRadius: 30,
+    marginBottom: 30,
   },
 });
 
