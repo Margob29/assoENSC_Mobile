@@ -3,8 +3,6 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import EventDetails from "../screen/Events/EventDetails";
 import EventScreen from "../screen/Events/EventScreen";
 import styles from "../theme/styles";
-import { NavigationContainer } from "@react-navigation/native";
-import Home from "../screen/Home";
 
 const EventsStack = createNativeStackNavigator();
 
@@ -21,10 +19,9 @@ const EventsStackNavigator = () => {
       />
       <EventsStack.Screen
         options={{ headerShown: false }}
-        name="Home"
-        component={Home}
+        name="EventDetails"
+        component={EventDetails}
       />
-      <EventsStack.Screen name="EventDetails" component={EventDetails} />
     </EventsStack.Navigator>
   );
 };

@@ -2,8 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   cardContainer: {
-    borderColor: "black",
-    borderWidth: 2,
+    elevation: 5,
     margin: 20,
     borderRadius: 10,
     alignItems: "center",
@@ -12,9 +11,10 @@ const styles = StyleSheet.create({
 
   titleCard: {
     backgroundColor: "#560067",
-    height: 100,
     justifyContent: "center",
     width: "100%",
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
   },
 
   title: {
@@ -43,7 +43,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#efefef",
     width: "100%",
     alignItems: "center",
-    borderRadius: 10,
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
   },
 
   cardImage: {

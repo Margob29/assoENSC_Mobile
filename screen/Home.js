@@ -22,7 +22,7 @@ const Home = (props) => {
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
-          goTo("RootTabNavigator");
+          goTo("RootTabNavigator", "EventsStackNavigator");
         }}
       >
         <Image source={image} style={styles.image} />
@@ -36,7 +36,7 @@ const Home = (props) => {
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
-          //goTo("RootTabNavigator");
+          goTo("ClubStackNavigator");
         }}
       >
         <Image source={image} style={styles.image} />
@@ -50,7 +50,7 @@ const Home = (props) => {
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
-          // goTo("RootTabNavigator");
+          goTo("StudentsStackNavigator");
         }}
       >
         <Image source={image} style={styles.image} />

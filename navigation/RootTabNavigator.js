@@ -10,7 +10,8 @@ import styles from "../theme/styles";
 
 const Nav = createBottomTabNavigator();
 
-export default function RootTabNavigator() {
+export default function RootTabNavigator(props) {
+  const name = props.screenName;
   return (
     <NavigationContainer independent={true}>
       <StatusBar backgroundColor="#560067" />
