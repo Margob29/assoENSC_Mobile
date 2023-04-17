@@ -7,7 +7,7 @@ const ClubsStack = createNativeStackNavigator();
 
 export default function ClubsStackNavigator() {
   return (
-    <ClubsStack.Navigator initialRouteName="ClubsList">
+    <ClubsStack.Navigator independent={true} initialRouteName="ClubsList">
       <ClubsStack.Screen
         name="ClubsList"
         component={ClubScreen}

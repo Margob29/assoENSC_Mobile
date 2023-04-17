@@ -15,7 +15,10 @@ export default function ClubCard(props) {
           style={styles.cardImage}
           source={require("../assets/interpromo.jpg")}
         />
-        <Text style={styles.textDate}>01/07/2019</Text>
+        <View>
+          <Text>Président : </Text>
+          <Text>Nombre de membres : </Text>
+        </View>
         <View style={styles.cardBottom}>
           <TouchableOpacity style={styles.deleteButton} onPress={onDelete}>
             <Text style={styles.deleteText}>Supprimer</Text>

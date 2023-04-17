@@ -1,33 +1,31 @@
 import { React, useState, useEffect } from "react";
 import { Text, View, Button, FlatList, TouchableOpacity } from "react-native";
 import styles from "../../theme/styles";
-import ClubCard from "../../components/EventCard";
+import ClubCard from "../../components/ClubCard";
 
 export default function ClubScreen(props) {
-  const [eventsList, setEventsList] = useState([]);
+  const [clubList, setClubsList] = useState([]);
 
   useEffect(() => {
-    fetch("https://enscmobilebureau.azurewebsites.net/api/EventApi")
+    fetch("https://enscmobilebureau.azurewebsites.net/api/GroupApi/GetGroups")
       // Accès au contenu JSON de la réponse
       .then((response) => response.json())
       .then((content) => {
-        setEventsList(content);
+        setClubsList(content);
       })
       .catch((error) => {
         console.error(error);
       });
-  }, [eventsList]);
+  }, [clubList]);
+  console.log(clubList);
 
-  const handleDeleteEvent = (eventId) => {
+  const handleDeleteClub = (clubId) => {
     // Supprimer l'événement de la base de données
-    fetch(
-      `https://enscmobilebureau.azurewebsites.net/api/EventApi/${eventId}`,
-      {
-        method: "DELETE",
-      }
-    )
+    fetch(`https://enscmobilebureau.azurewebsites.net/api/GroupApi/${clubId}`, {
+      method: "DELETE",
+    })
       .then(() => {
-        console.log("Event deleted successfully");
+        console.log("Club deleted successfully");
       })
       .catch((error) => {
         console.error(error);
@@ -36,7 +34,26 @@ export default function ClubScreen(props) {
 
   return (
     <View>
-     
+      <FlatList
+        data={clubList}
+        renderItem={({ item }) => (
+          <TouchableOpacity
+            onPress={() => {
+              props.navigation.navigate("GroupDetails", {
+                id: item.id,
+                onDelete: () => handleDeleteClub(item.id),
+              });
+            }}
+          >
+            <ClubCard
+              root={props.navigation}
+              name={item.name}
+              id={item.id}
+              onDelete={() => handleDeleteClub(item.id)}
+            />
+          </TouchableOpacity>
+        )}
+      />
     </View>
   );
 }

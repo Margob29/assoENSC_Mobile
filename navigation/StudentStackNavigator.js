@@ -6,7 +6,7 @@ const StudentsStack = createNativeStackNavigator();
 
 export default function StudentsStackNavigator() {
   return (
-    <StudentsStack.Navigator initialRouteName="StudentsList">
+    <StudentsStack.Navigator independent={true} initialRouteName="StudentsList">
       <StudentsStack.Screen
         name="StudentsList"
         component={StudentScreen}

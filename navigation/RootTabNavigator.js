@@ -3,22 +3,29 @@ import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
-import EventsStackNavigator from "./EventStackNavigator";
-import ClubsStackNavigator from "./ClubStackNavigator";
-import StudentsStackNavigator from "./StudentStackNavigator";
+import EventStackNavigator from "./EventStackNavigator";
+import ClubStackNavigator from "./ClubStackNavigator";
+import StudentStackNavigator from "./StudentStackNavigator";
 import styles from "../theme/styles";
 
 const Nav = createBottomTabNavigator();
 
 export default function RootTabNavigator(props) {
-  const name = props.screenName;
+  const name = props.route.params.screenName;
+  screenName =
+    name == "EventStackNavigator"
+      ? "EventStack"
+      : name == "ClubStackNavigator"
+      ? "ClubStack"
+      : "StudentStack";
+
   return (
     <NavigationContainer independent={true}>
       <StatusBar backgroundColor="#560067" />
       <Nav.Navigator
         style={styles.navbarStyle}
         screenOptions={({ route }) => ({
-          tabAssoIcon: ({ focused, color, size }) => {
+          tabBarIcon: ({ focused, color, size }) => {
             const icons = {
               EventStack: "calendar-outline",
               ClubStack: "people-outline",
@@ -28,7 +35,7 @@ export default function RootTabNavigator(props) {
               <Ionicons
                 name={icons[route.name] || "ios-menu"}
                 size={25}
-                color={styles.navbarStyle}
+                color={color}
               />
             );
           },
@@ -37,17 +44,20 @@ export default function RootTabNavigator(props) {
       >
         <Nav.Screen
           name="EventStack"
-          component={EventsStackNavigator}
+          component={EventStackNavigator}
+          initialParams={{ screenName: screenName }}
           options={{ title: "Evènements" }}
         />
         <Nav.Screen
           name="ClubStack"
-          component={ClubsStackNavigator}
+          initialParams={{ screenName: screenName }}
+          component={ClubStackNavigator}
           options={{ title: "Clubs" }}
         />
         <Nav.Screen
           name="StudentStack"
-          component={StudentsStackNavigator}
+          initialParams={{ screenName: screenName }}
+          component={StudentStackNavigator}
           options={{ title: "Elèves" }}
         />
       </Nav.Navigator>

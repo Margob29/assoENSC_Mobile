@@ -6,9 +6,14 @@ import styles from "../theme/styles";
 
 const EventsStack = createNativeStackNavigator();
 
-const EventsStackNavigator = () => {
+const EventsStackNavigator = (props) => {
+  const screenName = props.route.params?.screenName;
+  if (screenName !== props.route.name) {
+    props.navigation.navigate(screenName);
+  }
   return (
     <EventsStack.Navigator
+      independent={true}
       initialRouteName="EventsList"
       screenOptions={styles.pageTitle}
     >
