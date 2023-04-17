@@ -5,7 +5,6 @@ import DeleteButton from "./DeleteButton";
 
 export default function EventCard(props) {
   const deleteEvent = () => {
-    console.log(props.id);
     fetch(
       `https://enscmobilebureau.azurewebsites.net/api/EventApi/${props.id}`,
       {

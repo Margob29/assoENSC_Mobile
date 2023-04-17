@@ -4,6 +4,7 @@ import styles from "../theme/styles";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
 export default function AddButton() {
+  
   return (
     <View>
       <TouchableOpacity style={styles.addButton}>

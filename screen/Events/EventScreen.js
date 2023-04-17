@@ -21,7 +21,7 @@ export default function EventScreen(props) {
       <AddButton />
       <FlatList
         data={eventsList}
-        renderItem={({ item }) => <EventCard name={item.name} />} //onPress={props.navigation.push(EventCreation)} />}
+        renderItem={({ item }) => <EventCard name={item.name}/>} //onPress={props.navigation.push(EventCreation)} />}
       />
     </View>
   );
