@@ -27,7 +27,7 @@ export default function EventDetails(props) {
       {eventDetails && (
         <>
           <View style={{ margin: 32 }}>
-            <Text style={styles.title}>{eventDetails.name}</Text>
+            <Text style={globalStyle.titleCardDetails}>{eventDetails.name}</Text>
             <Text style={styles.date}>
               {new Date(eventDetails.date).toLocaleDateString("fr-FR", options)}
             </Text>

@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     alignItems: "center",
   },
-  title: {
+  titleCardDetails: {
     fontSize: 32,
     textAlign: "center",
     fontWeight: "bold",
