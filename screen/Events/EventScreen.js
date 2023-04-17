@@ -39,11 +39,21 @@ export default function EventScreen(props) {
       <FlatList
         data={eventsList}
         renderItem={({ item }) => (
-          <EventCard
-            name={item.name}
-            id={item.id}
-            onDelete={() => handleDeleteEvent(item.id)}
-          />
+          <TouchableOpacity
+            onPress={() => {
+              props.navigation.navigate("EventDetails", {
+                id: item.id,
+                onDelete: () => handleDeleteEvent(item.id),
+              });
+            }}
+          >
+            <EventCard
+              root={props.navigation}
+              name={item.name}
+              id={item.id}
+              onDelete={() => handleDeleteEvent(item.id)}
+            />
+          </TouchableOpacity>
         )}
       />
     </View>

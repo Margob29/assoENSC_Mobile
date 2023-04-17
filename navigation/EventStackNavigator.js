@@ -4,14 +4,17 @@ import EventCreation from "../screen/Events/EventCreation";
 import EventDetails from "../screen/Events/EventDetails";
 import EventScreen from "../screen/Events/EventScreen";
 import styles from "../theme/styles";
-import { NavigationContainer } from "@react-navigation/native";
-import Home from "../screen/Home";
 
 const EventsStack = createNativeStackNavigator();
 
-const EventsStackNavigator = () => {
+const EventsStackNavigator = (props) => {
+  const screenName = props.route.params?.screenName;
+  if (screenName !== props.route.name) {
+    props.navigation.navigate(screenName);
+  }
   return (
     <EventsStack.Navigator
+      independent={true}
       initialRouteName="EventsList"
       screenOptions={styles.pageTitle}
     >
@@ -22,8 +25,8 @@ const EventsStackNavigator = () => {
       />
       <EventsStack.Screen
         options={{ headerShown: false }}
-        name="Home"
-        component={Home}
+        name="EventDetails"
+        component={EventDetails}
       />
       <EventsStack.Screen name="EventDetails" component={EventDetails} />
       <EventsStack.Screen name="EventCreation" component={EventCreation} />

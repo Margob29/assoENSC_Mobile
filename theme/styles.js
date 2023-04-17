@@ -2,8 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   cardContainer: {
-    borderColor: "black",
-    borderWidth: 2,
+    elevation: 5,
     margin: 20,
     borderRadius: 10,
     alignItems: "center",
@@ -12,9 +11,10 @@ const styles = StyleSheet.create({
 
   titleCard: {
     backgroundColor: "#560067",
-    height: 100,
     justifyContent: "center",
     width: "100%",
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
   },
 
   title: {
@@ -54,7 +54,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#efefef",
     width: "100%",
     alignItems: "center",
-    borderRadius: 10,
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
   },
 
   cardImage: {
@@ -129,7 +130,55 @@ const styles = StyleSheet.create({
     borderWidth: 3,
     width: "50%",
     borderRadius: 30,
-    marginBottom: 30,
+    marginBottom: 30,},
+  container: {
+    flex: 1,
+    justifyContent: "flex-start",
+    alignItems: "center",
+  },
+  title: {
+    fontSize: 32,
+    textAlign: "center",
+    fontWeight: "bold",
+    color: "#560067",
+  },
+  date: {
+    fontSize: 24,
+    textAlign: "center",
+    fontStyle: "italic",
+    color: "grey",
+  },
+  descriptionTitle: {
+    margin: 16,
+    fontSize: 20,
+    fontWeight: "bold",
+    textAlign: "center",
+    color: "#560067",
+  },
+  description: {
+    margin: 16,
+    justifyContent: "space-between",
+    alignItems: "center",
+    backgroundColor: "#fff",
+    padding: 20,
+    borderRadius: 20,
+    elevation: 5,
+    width: "90%",
+    height: "33%",
+  },
+  group: {
+    textAlign: "center",
+    borderColor: "green",
+    color: "green",
+    padding: 10,
+    borderRadius: 10,
+    borderWidth: 2,
+    width: "25%",
+  },
+  cardImage: {
+    height: 200,
+    width: "90%",
+    margin: 15,
   },
 });
 
