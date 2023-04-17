@@ -17,7 +17,6 @@ export default function ClubScreen(props) {
         console.error(error);
       });
   }, [clubList]);
-  console.log(clubList);
 
   const handleDeleteClub = (clubId) => {
     // Supprimer l'événement de la base de données
@@ -39,7 +38,7 @@ export default function ClubScreen(props) {
         renderItem={({ item }) => (
           <TouchableOpacity
             onPress={() => {
-              props.navigation.navigate("GroupDetails", {
+              props.navigation.navigate("ClubDetails", {
                 id: item.id,
                 onDelete: () => handleDeleteClub(item.id),
               });
@@ -49,6 +48,7 @@ export default function ClubScreen(props) {
               root={props.navigation}
               name={item.name}
               id={item.id}
+              description={item.description}
               onDelete={() => handleDeleteClub(item.id)}
             />
           </TouchableOpacity>
