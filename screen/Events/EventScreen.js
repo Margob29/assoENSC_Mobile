@@ -2,10 +2,10 @@ import { React, useState, useEffect } from "react";
 import { Text, View, Button, FlatList, TouchableOpacity } from "react-native";
 import styles from "../../theme/styles";
 import EventCard from "../../components/EventCard";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 export default function EventScreen(props) {
   const [eventsList, setEventsList] = useState([]);
-
   useEffect(() => {
     fetch("https://enscmobilebureau.azurewebsites.net/api/EventApi")
       // Accès au contenu JSON de la réponse

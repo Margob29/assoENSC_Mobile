@@ -3,7 +3,7 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import styles from "../theme/styles";
 
 export default function EventCard(props) {
-  const { name, id, onDelete } = props;
+const { name, id, onDelete } = props;
 
   return (
     <View>
