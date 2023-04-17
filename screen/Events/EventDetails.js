@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from "react";
 import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
 import globalStyle from "../../theme/styles";
+import { event } from "react-native-reanimated";
 
 export default function EventDetails(props) {
   const onDelete = props.route.params.onDelete;
@@ -21,13 +22,16 @@ export default function EventDetails(props) {
   }, []);
 
   const options = { day: "numeric", month: "long", year: "numeric" };
+  console.log(eventDetails);
 
   return (
     <View style={styles.container}>
       {eventDetails && (
         <>
           <View style={{ margin: 32 }}>
-            <Text style={globalStyle.titleCardDetails}>{eventDetails.name}</Text>
+            <Text style={globalStyle.titleCardDetails}>
+              {eventDetails.name}
+            </Text>
             <Text style={styles.date}>
               {new Date(eventDetails.date).toLocaleDateString("fr-FR", options)}
             </Text>

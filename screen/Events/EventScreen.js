@@ -59,6 +59,7 @@ export default function EventScreen(props) {
               root={props.navigation}
               name={item.name}
               id={item.id}
+              date={item.date}
               onDelete={() => handleDeleteEvent(item.id)}
             />
           </TouchableOpacity>

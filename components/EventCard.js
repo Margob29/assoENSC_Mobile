@@ -3,7 +3,8 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import styles from "../theme/styles";
 
 export default function EventCard(props) {
-const { name, id, onDelete } = props;
+  const { name, id, onDelete, date } = props;
+  const options = { day: "numeric", month: "numeric", year: "numeric" };
 
   return (
     <View>
@@ -15,7 +16,9 @@ const { name, id, onDelete } = props;
           style={styles.cardImage}
           source={require("../assets/interpromo.jpg")}
         />
-        <Text style={styles.textDate}>01/07/2019</Text>
+        <Text style={styles.textDate}>
+          {new Date(date).toLocaleDateString("fr-FR", options)}
+        </Text>
         <View style={styles.cardBottom}>
           <TouchableOpacity style={styles.deleteButton} onPress={onDelete}>
             <Text style={styles.deleteText}>Supprimer</Text>

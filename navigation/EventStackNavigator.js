@@ -28,7 +28,11 @@ const EventsStackNavigator = (props) => {
         name="EventDetails"
         component={EventDetails}
       />
-      <EventsStack.Screen name="EventCreation" component={EventCreation} />
+      <EventsStack.Screen
+        options={{ headerShown: false }}
+        name="EventCreation"
+        component={EventCreation}
+      />
     </EventsStack.Navigator>
   );
 };
