@@ -70,6 +70,18 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
 
+  textName: {
+    fontSize: 40,
+    marginBottom: 10,
+    color: "#560067",
+  },
+
+  textMail: {
+    fontSize: 20,
+    color: "black",
+    marginBottom: 10,
+  },
+
   pageTitle: {
     fontSize: 30,
     backgroundColor: "#560067",
@@ -130,7 +142,8 @@ const styles = StyleSheet.create({
     borderWidth: 3,
     width: "50%",
     borderRadius: 30,
-    marginBottom: 30,},
+    marginBottom: 30,
+  },
   container: {
     flex: 1,
     justifyContent: "flex-start",

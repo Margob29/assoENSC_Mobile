@@ -9,27 +9,54 @@ import {
 } from "react-native";
 import styles from "../theme/styles";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import StudentCard from "../components/StudentCard";
 
 export default function StudentScreen() {
+  const [studentsList, setStudentsList] = useState([]);
+
+  useEffect(() => {
+    fetch(
+      "https://enscmobilebureau.azurewebsites.net/api/StudentApi/GetStudents"
+    )
+      // Accès au contenu JSON de la réponse
+      .then((response) => response.json())
+      .then((content) => {
+        setStudentsList(content);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, [studentsList]);
+
+  const handleDeleteStudent = (studentId) => {
+    // Supprimer l'événement de la base de données
+    fetch(
+      `https://enscmobilebureau.azurewebsites.net/api/StudentApi/${studentId}`,
+      {
+        method: "DELETE",
+      }
+    )
+      .then(() => {
+        console.log("Student deleted successfully");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   return (
     <View>
-      <View>
-        <View style={styles.cardContainer}>
-          <View style={styles.titleCard}>
-            <Text style={styles.title}>Bonjour</Text>
-          </View>
-          <Image
-            style={styles.cardImage}
-            source={require("../assets/interpromo.jpg")}
+      <FlatList
+        data={studentsList}
+        renderItem={({ item }) => (
+          <StudentCard
+            name={item.name}
+            year={item.promo}
+            mail={item.emailAdress}
+            onDelete={() => handleDeleteStudent(item.id)}
           />
-          <Text style={styles.textDate}>01/07/2019</Text>
-          <View style={styles.cardBottom}>
-            <TouchableOpacity style={styles.deleteButton}>
-              <Text style={styles.deleteText}>Supprimer</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </View>
+        )}
+      />
     </View>
   );
 }
