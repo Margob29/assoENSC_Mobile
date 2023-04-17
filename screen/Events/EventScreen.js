@@ -36,6 +36,14 @@ export default function EventScreen(props) {
 
   return (
     <View>
+      <TouchableOpacity style={styles.addButton}>
+        <Ionicons
+          name={"add-circle-outline"}
+          size={80}
+          color={"#560067"}
+          onPress={() => props.navigation.navigate("EventCreation")}
+        />
+      </TouchableOpacity>
       <FlatList
         data={eventsList}
         renderItem={({ item }) => (
