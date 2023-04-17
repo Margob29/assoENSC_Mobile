@@ -12,8 +12,8 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 const Home = (props) => {
   const image = require("../assets/campus.jpg");
 
-  const goTo = (root, name) => {
-    props.navigation.navigate(root, { screenName: name });
+  const goTo = (root) => {
+    props.navigation.navigate(root);
   };
 
   return (
@@ -22,7 +22,7 @@ const Home = (props) => {
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
-          goTo("RootTabNavigator", "EventStackNavigator");
+          goTo("RootTabNavigator");
         }}
       >
         <Image source={image} style={styles.image} />
@@ -36,7 +36,7 @@ const Home = (props) => {
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
-          goTo("RootTabNavigator", "ClubStackNavigator");
+          //goTo("RootTabNavigator");
         }}
       >
         <Image source={image} style={styles.image} />
@@ -50,7 +50,7 @@ const Home = (props) => {
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
-          goTo("RootTabNavigator", "StudentStackNavigator");
+          // goTo("RootTabNavigator");
         }}
       >
         <Image source={image} style={styles.image} />
