@@ -130,24 +130,29 @@ const styles = StyleSheet.create({
     borderWidth: 3,
     width: "50%",
     borderRadius: 30,
-    marginBottom: 30,},
+    marginBottom: 30,
+  },
+
   container: {
     flex: 1,
     justifyContent: "flex-start",
     alignItems: "center",
   },
+
   titleCardDetails: {
     fontSize: 32,
     textAlign: "center",
     fontWeight: "bold",
     color: "#560067",
   },
+
   date: {
     fontSize: 24,
     textAlign: "center",
     fontStyle: "italic",
     color: "grey",
   },
+
   descriptionTitle: {
     margin: 16,
     fontSize: 20,
