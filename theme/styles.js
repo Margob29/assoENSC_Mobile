@@ -43,11 +43,14 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 520,
     right: 20,
-    borderRadius: 50,
-    backgroundColor: "white",
+    borderRadius: 40,
+    width: 80,
+    backgroundColor: "#560067",
     padding: -10,
     zIndex: 1,
     elevation: 2,
+    shadowColor: "white",
+    shadowRadius: 10,
   },
 
   cardBottom: {

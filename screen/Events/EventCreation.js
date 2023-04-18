@@ -3,9 +3,8 @@ import { Text, TextInput, View, TouchableOpacity } from "react-native";
 import styles from "../../theme/styles";
 import ValidationButton from "../../components/ValidationButton";
 import { Picker } from "@react-native-picker/picker";
-import Ionicons from "react-native-vector-icons/Ionicons";
 
-export default function EventCreation() {
+export default function EventCreation(props) {
   const [inputNameValue, setInputNameValue] = useState("");
   const [inputDescValue, setInputDescValue] = useState("");
   const [club, setClub] = useState();
@@ -31,6 +30,7 @@ export default function EventCreation() {
     })
       .then(() => {
         console.log("Event added successfully");
+        props.navigation.navigate("EventsList");
       })
       .catch((error) => {
         console.error(error);
@@ -58,8 +58,10 @@ export default function EventCreation() {
         style={styles.selectForm}
         onValueChange={(value) => setClub(value)}
       >
-        {clubsList.map((event) => {
-          return <Picker.Item label={event.name} value={event.id} />;
+        {clubsList.map((event, index) => {
+          return (
+            <Picker.Item key={index} label={event.name} value={event.id} />
+          );
         })}
       </Picker>
       <Text style={styles.labelForm}>Nom de l'évènement</Text>

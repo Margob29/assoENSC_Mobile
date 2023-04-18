@@ -39,9 +39,9 @@ export default function EventScreen(props) {
       {/* Bouton d'ajout d'évènements */}
       <TouchableOpacity style={styles.addButton}>
         <Ionicons
-          name={"add-circle-outline"}
+          name={"add-outline"}
           size={80}
-          color={"#560067"}
+          color={"#fff"}
           onPress={() => props.navigation.navigate("EventCreation")}
         />
       </TouchableOpacity>

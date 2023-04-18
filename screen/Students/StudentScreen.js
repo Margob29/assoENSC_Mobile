@@ -7,11 +7,11 @@ import {
   TouchableOpacity,
   Image,
 } from "react-native";
-import styles from "../theme/styles";
+import styles from "../../theme/styles";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import StudentCard from "../components/StudentCard";
+import StudentCard from "../../components/StudentCard";
 
-export default function StudentScreen() {
+export default function StudentScreen(props) {
   const [studentsList, setStudentsList] = useState([]);
 
   useEffect(() => {
@@ -46,6 +46,16 @@ export default function StudentScreen() {
 
   return (
     <View>
+      {/* Bouton d'ajout d'élèves */}
+      <TouchableOpacity style={styles.addButton}>
+        <Ionicons
+          name={"add-outline"}
+          size={80}
+          color={"#fff"}
+          onPress={() => props.navigation.navigate("StudentCreation")}
+        />
+      </TouchableOpacity>
+      {/* Cartes des élèves existants */}
       <FlatList
         data={studentsList}
         renderItem={({ item }) => (
