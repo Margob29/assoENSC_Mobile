@@ -12,8 +12,6 @@ const EventsStack = createNativeStackNavigator();
 const EventsStackNavigator = (props) => {
   const screenName = props.route.params?.screenName;
 
-console.log(start);
-
   if (screenName !== props.route.name && start !== 1  ) {
     props.navigation.navigate(screenName);
   }
