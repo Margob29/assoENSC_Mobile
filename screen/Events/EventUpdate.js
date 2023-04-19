@@ -68,47 +68,55 @@ export default function EventModification(props) {
   return (
     <ScrollView>
       <View style={styles.formContainer}>
-        <Text style={styles.titleForm}>{name}</Text>
-        <Text style={styles.catchyWordsForm}>
-          Prêt à modifier ton événement ?
-        </Text>
-        <Text style={styles.labelForm}>Club créateur de l'évènement</Text>
-        <Picker
-          style={styles.selectForm}
-          selectedValue={club}
-          onValueChange={(value) => setClub(value)}
-        >
-          {clubsList.map((event) => {
-            return <Picker.Item label={event.name} value={event.id} />;
-          })}
-        </Picker>
-        <Text style={styles.labelForm}>Nom de l'évènement</Text>
-        <View style={{ flexDirection: "row" }}>
-          <TextInput
-            style={styles.inputForm}
-            value={name}
-            onChangeText={(text) => setName(text)}
-          />
-        </View>
-        <Text style={styles.labelForm}>Description de l'évènement</Text>
-        <View style={{ flexDirection: "row" }}>
-          <TextInput
-            style={styles.inputForm}
-            value={description}
-            onChangeText={(text) => setDescription(text)}
-          />
-        </View>
         <View>
-          <Button
-            title="Sélectionner une date"
-            onPress={() => setShowCalendar(true)}
-          />
-          {showCalendar && (
+          <Text style={styles.titleCardDetails}>{name}</Text>
+          <Text style={styles.subtitle}>Prêt à modifier ton événement ?</Text>
+        </View>
+        <View
+          style={{
+            alignItems: "center",
+          }}
+        >
+          <Text style={styles.labelForm}>Club créateur de l'évènement</Text>
+          <Picker
+            style={styles.selectForm}
+            selectedValue={club}
+            onValueChange={(value) => setClub(value)}
+            multiline={true}
+          >
+            {clubsList.map((event) => {
+              return <Picker.Item label={event.name} value={event.id} />;
+            })}
+          </Picker>
+          <Text style={styles.labelForm}>Nom de l'évènement</Text>
+          <View style={{ flexDirection: "row" }}>
+            <TextInput
+              style={styles.inputForm}
+              value={name}
+              onChangeText={(text) => setName(text)}
+              multiline={true}
+            />
+          </View>
+          <Text style={styles.labelForm}>Description de l'évènement</Text>
+          <View style={{ flexDirection: "row" }}>
+            <TextInput
+              style={styles.inputForm}
+              value={description}
+              onChangeText={(text) => setDescription(text)}
+            />
+          </View>
+          <View
+            style={{
+              marginVertical: 32,
+            }}
+          >
+            <Text style={styles.labelForm}>Date de l'évènement</Text>
+
             <CalendarPicker
               onDateChange={handleDateChange}
               selectedStartDate={date}
-              width={350}
-              height={350}
+              width={300}
+              height={300}
               textStyle={{
                 fontWeight: "normal",
                 color: "#000",
@@ -118,14 +126,20 @@ export default function EventModification(props) {
                 color: "#fff",
               }}
             />
-          )}
+          </View>
         </View>
-        <TouchableOpacity
-          style={styles.validateButton}
-          onPress={handleUpdateEvent}
+        <View
+          style={{
+            alignItems: "center",
+          }}
         >
-          <Text style={styles.validateText}>Mettre à jour l'évènement</Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.validateButton}
+            onPress={handleUpdateEvent}
+          >
+            <Text style={styles.validateText}>Mettre à jour l'évènement</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </ScrollView>
   );

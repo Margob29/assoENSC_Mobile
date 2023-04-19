@@ -38,7 +38,7 @@ export default function EventDetails(props) {
               <Text style={globalStyle.titleCardDetails}>
                 {eventDetails.name}
               </Text>
-              <Text style={globalStyle.date}>
+              <Text style={globalStyle.subtitle}>
                 {new Date(eventDetails.date).toLocaleDateString(
                   "fr-FR",
                   options

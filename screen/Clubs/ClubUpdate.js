@@ -18,7 +18,6 @@ export default function ClubUpdate(props) {
     props.route.params.description
   );
 
-
   const handleUpdateClub = () => {
     // Modifier l'événement dans la base de données
     fetch(
@@ -47,34 +46,46 @@ export default function ClubUpdate(props) {
   return (
     <ScrollView>
       <View style={styles.formContainer}>
-        <Text style={styles.titleForm}>{name}</Text>
-        <Text style={styles.catchyWordsForm}>
-          Prêt à modifier ton club ?
-        </Text>
-    
-        <Text style={styles.labelForm}>Nom du club</Text>
-        <View style={{ flexDirection: "row" }}>
-          <TextInput
-            style={styles.inputForm}
-            value={name}
-            onChangeText={(text) => setName(text)}
-          />
+        <View>
+          <Text style={styles.titleCardDetails}>{name}</Text>
+          <Text style={styles.subtitle}>Prêt à modifier ton club ?</Text>
         </View>
-        <Text style={styles.labelForm}>Description du club</Text>
-        <View style={{ flexDirection: "row" }}>
-          <TextInput
-            style={styles.inputForm}
-            value={description}
-            onChangeText={(text) => setDescription(text)}
-          />
-        </View>
-       
-        <TouchableOpacity
-          style={styles.validateButton}
-          onPress={handleUpdateClub}
+        <View
+          style={{
+            alignItems: "center",
+          }}
         >
-          <Text style={styles.validateText}>Mettre à jour le club</Text>
-        </TouchableOpacity>
+          <Text style={styles.labelForm}>Nom du club</Text>
+          <View style={{ flexDirection: "row" }}>
+            <TextInput
+              style={styles.inputForm}
+              value={name}
+              onChangeText={(text) => setName(text)}
+              multiline={true}
+            />
+          </View>
+          <Text style={styles.labelForm}>Description du club</Text>
+          <View style={{ flexDirection: "row" }}>
+            <TextInput
+              style={styles.inputForm}
+              value={description}
+              onChangeText={(text) => setDescription(text)}
+              multiline={true}
+            />
+          </View>
+        </View>
+        <View
+          style={{
+            alignItems: "center",
+          }}
+        >
+          <TouchableOpacity
+            style={styles.validateButton}
+            onPress={handleUpdateClub}
+          >
+            <Text style={styles.validateText}>Mettre à jour le club</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </ScrollView>
   );

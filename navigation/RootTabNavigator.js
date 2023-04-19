@@ -7,8 +7,10 @@ import EventStackNavigator from "./EventStackNavigator";
 import ClubStackNavigator from "./ClubStackNavigator";
 import StudentStackNavigator from "./StudentStackNavigator";
 import styles from "../theme/styles";
+import { useEffect } from "react";
 
 const Nav = createBottomTabNavigator();
+export let start = 0;
 
 export default function RootTabNavigator(props) {
   const name = props.route.params.screenName;
@@ -18,6 +20,12 @@ export default function RootTabNavigator(props) {
       : name == "ClubStackNavigator"
       ? "ClubStack"
       : "StudentStack";
+
+  useEffect(() => {
+    if (screenName !== "EventStack" && name !== "EventStack") {
+      start = 1;
+    }
+  }, [screenName]);
 
   return (
     <NavigationContainer independent={true}>
@@ -50,13 +58,11 @@ export default function RootTabNavigator(props) {
         />
         <Nav.Screen
           name="ClubStack"
-          initialParams={{ screenName: screenName }}
           component={ClubStackNavigator}
           options={{ title: "Clubs" }}
         />
         <Nav.Screen
           name="StudentStack"
-          initialParams={{ screenName: screenName }}
           component={StudentStackNavigator}
           options={{ title: "Elèves" }}
         />
