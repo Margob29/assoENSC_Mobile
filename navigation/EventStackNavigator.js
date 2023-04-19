@@ -5,12 +5,16 @@ import EventDetails from "../screen/Events/EventDetails";
 import EventScreen from "../screen/Events/EventScreen";
 import EventUpdate from "../screen/Events/EventUpdate";
 import styles from "../theme/styles";
+import { start } from "./RootTabNavigator";
 
 const EventsStack = createNativeStackNavigator();
 
 const EventsStackNavigator = (props) => {
   const screenName = props.route.params?.screenName;
-  if (screenName !== props.route.name) {
+
+console.log(start);
+
+  if (screenName !== props.route.name && start !== 1  ) {
     props.navigation.navigate(screenName);
   }
   return (
@@ -31,7 +35,6 @@ const EventsStackNavigator = (props) => {
       />
       <EventsStack.Screen name="EventCreation" component={EventCreation} />
       <EventsStack.Screen name="EventUpdate" component={EventUpdate} />
-
     </EventsStack.Navigator>
   );
 };

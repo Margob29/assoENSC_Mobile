@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import { Text, View, Button, FlatList, TouchableOpacity } from "react-native";
 import styles from "../../theme/styles";
 import ClubCard from "../../components/ClubCard";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 export default function ClubScreen(props) {
   const [clubList, setClubsList] = useState([]);
@@ -33,6 +34,14 @@ export default function ClubScreen(props) {
 
   return (
     <View>
+      <TouchableOpacity style={styles.addButton}>
+        <Ionicons
+          name={"add-circle-outline"}
+          size={80}
+          color={"#560067"}
+          onPress={() => props.navigation.navigate("ClubCreation")}
+        />
+      </TouchableOpacity>
       <FlatList
         data={clubList}
         renderItem={({ item }) => (
