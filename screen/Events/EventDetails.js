@@ -45,6 +45,7 @@ export default function EventDetails(props) {
                 )}
               </Text>
             </View>
+
             <View style={globalStyle.description}>
               <Text style={globalStyle.descriptionTitle}>Description</Text>
               <Text>{eventDetails.description}</Text>
@@ -56,31 +57,33 @@ export default function EventDetails(props) {
               style={globalStyle.cardImage}
               source={require("../../assets/interpromo.jpg")}
             />
-            <TouchableOpacity
-              style={globalStyle.deleteButton}
-              onPress={() => {
-                props.navigation.navigate("EventUpdate", {
-                  id: id,
-                  name: eventDetails.name,
-                  description: eventDetails.description,
-                  club: eventDetails.group.name,
-                  date: eventDetails.date,
-                });
-              }}
-            >
-              <Text style={globalStyle.deleteText}>Modifier</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={globalStyle.deleteButton}
-              onPress={() => {
-                onDelete();
-                props.navigation.goBack();
-              }}
-            >
-              <Text style={globalStyle.deleteText}>Supprimer</Text>
-            </TouchableOpacity>
           </>
         )}
+        <View style={{ flexDirection: "row" }}>
+          <TouchableOpacity
+            style={globalStyle.deleteButton}
+            onPress={() => {
+              props.navigation.navigate("EventUpdate", {
+                id: id,
+                name: eventDetails.name,
+                description: eventDetails.description,
+                club: eventDetails.group.name,
+                date: eventDetails.date,
+              });
+            }}
+          >
+            <Text style={globalStyle.deleteText}>Modifier</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={globalStyle.deleteButton}
+            onPress={() => {
+              onDelete();
+              props.navigation.goBack();
+            }}
+          >
+            <Text style={globalStyle.deleteText}>Supprimer</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </ScrollView>
   );

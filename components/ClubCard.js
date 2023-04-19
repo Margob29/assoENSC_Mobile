@@ -18,10 +18,6 @@ export default function ClubCard(props) {
           <Text>Description</Text>
           <Text>{description}</Text>
         </View>
-        <View>
-          <Text>Président : </Text>
-          <Text>Nombre de membres : </Text>
-        </View>
         <View style={styles.cardBottom}>
           <TouchableOpacity style={styles.deleteButton} onPress={onDelete}>
             <Text style={styles.deleteText}>Supprimer</Text>

@@ -65,7 +65,6 @@ export default function EventModification(props) {
         console.error(error);
       });
   };
-  console.log(date);
   return (
     <ScrollView>
       <View style={styles.formContainer}>

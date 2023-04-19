@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 15,
     margin: 10,
-    width: "50%",
+    width: "40%",
     alignItems: "center",
     backgroundColor: "#efefef",
   },
@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     elevation: 5,
     width: "90%",
-    height: "33%",
+    height: 200,
   },
   group: {
     textAlign: "center",
