@@ -3,7 +3,6 @@ import { Text, TextInput, View, TouchableOpacity } from "react-native";
 import styles from "../../theme/styles";
 import ValidationButton from "../../components/ValidationButton";
 import { Picker } from "@react-native-picker/picker";
-import Ionicons from "react-native-vector-icons/Ionicons";
 
 export default function EventCreation(props) {
   const [inputNameValue, setInputNameValue] = useState("");

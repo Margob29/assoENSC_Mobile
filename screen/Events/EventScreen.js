@@ -36,14 +36,16 @@ export default function EventScreen(props) {
 
   return (
     <View>
+      {/* Bouton d'ajout d'évènements */}
       <TouchableOpacity style={styles.addButton}>
         <Ionicons
-          name={"add-circle-outline"}
+          name={"add-outline"}
           size={80}
-          color={"#560067"}
+          color={"#fff"}
           onPress={() => props.navigation.navigate("EventCreation")}
         />
       </TouchableOpacity>
+      {/* Cartes des évènements existants */}
       <FlatList
         data={eventsList}
         renderItem={({ item }) => (
@@ -59,6 +61,7 @@ export default function EventScreen(props) {
               root={props.navigation}
               name={item.name}
               id={item.id}
+              date={item.date}
               onDelete={() => handleDeleteEvent(item.id)}
             />
           </TouchableOpacity>

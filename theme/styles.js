@@ -33,8 +33,24 @@ const styles = StyleSheet.create({
     backgroundColor: "#efefef",
   },
 
+  modifyButton: {
+    borderColor: "black",
+    borderWidth: 2,
+    borderRadius: 15,
+    margin: 10,
+    width: "40%",
+    alignItems: "center",
+    backgroundColor: "#efefef",
+  },
+
   deleteText: {
     color: "red",
+    fontSize: 20,
+    margin: 10,
+  },
+
+  modifyText: {
+    color: "black",
     fontSize: 20,
     margin: 10,
   },
@@ -43,11 +59,14 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 520,
     right: 20,
-    borderRadius: 50,
-    backgroundColor: "white",
+    borderRadius: 40,
+    width: 80,
+    backgroundColor: "#560067",
     padding: -10,
     zIndex: 1,
     elevation: 2,
+    shadowColor: "white",
+    shadowRadius: 10,
   },
 
   cardBottom: {
@@ -67,6 +86,18 @@ const styles = StyleSheet.create({
   textDate: {
     fontSize: 20,
     color: "grey",
+    marginBottom: 10,
+  },
+
+  textName: {
+    fontSize: 40,
+    marginBottom: 10,
+    color: "#560067",
+  },
+
+  textMail: {
+    fontSize: 20,
+    color: "black",
     marginBottom: 10,
   },
 

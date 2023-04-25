@@ -8,6 +8,7 @@ import {
   ScrollView,
 } from "react-native";
 import globalStyle from "../../theme/styles";
+import { event } from "react-native-reanimated";
 
 export default function EventDetails(props) {
   const onDelete = props.route.params.onDelete;
@@ -28,6 +29,7 @@ export default function EventDetails(props) {
   }, []);
 
   const options = { day: "numeric", month: "long", year: "numeric" };
+  console.log(eventDetails);
 
   return (
     <ScrollView>
