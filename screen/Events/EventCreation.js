@@ -1,12 +1,9 @@
 import { useState } from "react";
 import { Text, TextInput, View, TouchableOpacity } from "react-native";
 import styles from "../../theme/styles";
-import ValidationButton from "../../components/ValidationButton";
 import { Picker } from "@react-native-picker/picker";
 
 export default function EventCreation(props) {
-  const [inputNameValue, setInputNameValue] = useState("");
-  const [inputDescValue, setInputDescValue] = useState("");
   const [club, setClub] = useState();
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");

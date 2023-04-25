@@ -40,32 +40,38 @@ export default function StudentCreation(props) {
     <View style={styles.formContainer}>
       <Text style={styles.titleForm}>Ajouter un étudiant</Text>
       <Text style={styles.labelForm}>Nom :</Text>
-      <TextInput
-        style={styles.inputForm}
-        value={name}
-        onChangeText={(text) => setName(text)}
-      />
-      <Text style={styles.labelForm}>Email :</Text>
-      <TextInput
-        style={styles.inputForm}
-        value={mail}
-        onChangeText={(text) => setMail(text)}
-      />
-      <Text style={styles.labelForm}>Promo :</Text>
-      <Picker
-        style={styles.selectForm}
-        onValueChange={(value) => setPromo(value)}
+      <View
+        style={{
+          alignItems: "center",
+        }}
       >
-        {promoList.map((prom, index) => {
-          return <Picker.Item key={index} label={`${prom}`} value={prom} />;
-        })}
-      </Picker>
-      <TouchableOpacity
-        style={styles.validateButton}
-        onPress={handleAddStudent}
-      >
-        <Text style={styles.validateText}>Ajouter l'étudiant</Text>
-      </TouchableOpacity>
+        <TextInput
+          style={styles.inputForm}
+          value={name}
+          onChangeText={(text) => setName(text)}
+        />
+        <Text style={styles.labelForm}>Email :</Text>
+        <TextInput
+          style={styles.inputForm}
+          value={mail}
+          onChangeText={(text) => setMail(text)}
+        />
+        <Text style={styles.labelForm}>Promo :</Text>
+        <Picker
+          style={styles.selectForm}
+          onValueChange={(value) => setPromo(value)}
+        >
+          {promoList.map((prom, index) => {
+            return <Picker.Item key={index} label={`${prom}`} value={prom} />;
+          })}
+        </Picker>
+        <TouchableOpacity
+          style={styles.validateButton}
+          onPress={handleAddStudent}
+        >
+          <Text style={styles.validateText}>Ajouter l'étudiant</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }

@@ -29,7 +29,6 @@ export default function EventDetails(props) {
   }, []);
 
   const options = { day: "numeric", month: "long", year: "numeric" };
-  console.log(eventDetails);
 
   return (
     <ScrollView>
