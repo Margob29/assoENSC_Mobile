@@ -1,12 +1,5 @@
 import { React, useState, useEffect } from "react";
-import {
-  Text,
-  View,
-  Button,
-  FlatList,
-  TouchableOpacity,
-  Image,
-} from "react-native";
+import { View, FlatList, TouchableOpacity } from "react-native";
 import styles from "../../theme/styles";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import StudentCard from "../../components/StudentCard";
@@ -63,6 +56,7 @@ export default function StudentScreen(props) {
             name={item.name}
             year={item.promo}
             mail={item.emailAdress}
+            id={item.id}
             onDelete={() => handleDeleteStudent(item.id)}
           />
         )}

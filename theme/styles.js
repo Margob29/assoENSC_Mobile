@@ -28,13 +28,29 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 15,
     margin: 10,
-    width: "50%",
+    width: "40%",
+    alignItems: "center",
+    backgroundColor: "#efefef",
+  },
+
+  modifyButton: {
+    borderColor: "black",
+    borderWidth: 2,
+    borderRadius: 15,
+    margin: 10,
+    width: "40%",
     alignItems: "center",
     backgroundColor: "#efefef",
   },
 
   deleteText: {
     color: "red",
+    fontSize: 20,
+    margin: 10,
+  },
+
+  modifyText: {
+    color: "black",
     fontSize: 20,
     margin: 10,
   },
