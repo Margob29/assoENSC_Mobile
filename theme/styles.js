@@ -123,30 +123,35 @@ const styles = StyleSheet.create({
   labelForm: {
     textAlign: "center",
     fontSize: 20,
-    marginBottom: 10,
+    marginTop: 32,
+    marginBottom:16,
   },
 
   inputForm: {
+    textAlign:'center',
     height: 50,
-    borderWidth: 3,
     width: "70%",
     borderRadius: 30,
-    marginBottom: 30,
+    backgroundColor: "white",
+    elevation: 5,
+    flexWrap:'wrap',
+    marginBottom:32,
   },
 
   formContainer: {
     flex: 1,
-    alignItems: "center",
+    justifyContent: "space-around",
   },
 
   validateButton: {
-    borderColor: "blue",
+    borderColor: "#560067",
     borderWidth: 2,
     borderRadius: 15,
-    margin: 10,
+    margin: 24,
     width: "70%",
     alignItems: "center",
-    backgroundColor: "blue",
+    backgroundColor: "#560067",
+    elevation: 5,
   },
 
   validateText: {
@@ -163,23 +168,27 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     marginBottom: 30,
   },
+
   container: {
     flex: 1,
     justifyContent: "flex-start",
     alignItems: "center",
   },
+
   titleCardDetails: {
     fontSize: 32,
     textAlign: "center",
     fontWeight: "bold",
     color: "#560067",
   },
-  date: {
+
+  subtitle: {
     fontSize: 24,
     textAlign: "center",
     fontStyle: "italic",
     color: "grey",
   },
+
   descriptionTitle: {
     margin: 16,
     fontSize: 20,
@@ -196,7 +205,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     elevation: 5,
     width: "90%",
-    height: "33%",
+    height: 200,
   },
   group: {
     textAlign: "center",

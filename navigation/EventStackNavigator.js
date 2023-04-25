@@ -3,13 +3,16 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import EventCreation from "../screen/Events/EventCreation";
 import EventDetails from "../screen/Events/EventDetails";
 import EventScreen from "../screen/Events/EventScreen";
+import EventUpdate from "../screen/Events/EventUpdate";
 import styles from "../theme/styles";
+import { start } from "./RootTabNavigator";
 
 const EventsStack = createNativeStackNavigator();
 
 const EventsStackNavigator = (props) => {
   const screenName = props.route.params?.screenName;
-  if (screenName !== props.route.name) {
+
+  if (screenName !== props.route.name && start !== 1  ) {
     props.navigation.navigate(screenName);
   }
   return (
@@ -33,6 +36,7 @@ const EventsStackNavigator = (props) => {
         name="EventCreation"
         component={EventCreation}
       />
+      <EventsStack.Screen name="EventUpdate" component={EventUpdate} />
     </EventsStack.Navigator>
   );
 };

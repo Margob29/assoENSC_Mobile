@@ -49,36 +49,51 @@ export default function EventCreation(props) {
 
   return (
     <View style={styles.formContainer}>
-      <Text style={styles.titleForm}>Créez votre évènement ! </Text>
-      <Text style={styles.catchyWordsForm}>
-        Prêt à faire kiffer ton école ?
-      </Text>
-      <Text style={styles.labelForm}>Club créateur de l'évènement</Text>
-      <Picker
-        style={styles.selectForm}
-        onValueChange={(value) => setClub(value)}
+      <View>
+        <Text style={styles.titleCardDetails}>Créez votre évènement ! </Text>
+        <Text style={styles.subtitle}>Prêt à faire kiffer ton école ?</Text>
+      </View>
+      <View
+        style={{
+          alignItems: "center",
+        }}
       >
-        {clubsList.map((event, index) => {
-          return (
-            <Picker.Item key={index} label={event.name} value={event.id} />
-          );
-        })}
-      </Picker>
-      <Text style={styles.labelForm}>Nom de l'évènement</Text>
-      <TextInput
-        style={styles.inputForm}
-        value={name}
-        onChangeText={(text) => setName(text)}
-      />
-      <Text style={styles.labelForm}>Description de l'évènement</Text>
-      <TextInput
-        style={styles.inputForm}
-        value={description}
-        onChangeText={(text) => setDescription(text)}
-      />
-      <TouchableOpacity style={styles.validateButton} onPress={handleAddEvent}>
-        <Text style={styles.validateText}>Ajouter l'évènement</Text>
-      </TouchableOpacity>
+        <Text style={styles.labelForm}>Club créateur de l'évènement</Text>
+        <Picker
+          style={styles.inputForm}
+          onValueChange={(value) => setClub(value)}
+        >
+          {clubsList.map((event) => {
+            return <Picker.Item label={event.name} value={event.id} />;
+          })}
+        </Picker>
+        <Text style={styles.labelForm}>Nom de l'évènement</Text>
+        <TextInput
+          style={styles.inputForm}
+          value={name}
+          onChangeText={(text) => setName(text)}
+          multiline={true}
+        />
+        <Text style={styles.labelForm}>Description de l'évènement</Text>
+        <TextInput
+          style={styles.inputForm}
+          value={description}
+          onChangeText={(text) => setDescription(text)}
+          multiline={true}
+        />
+      </View>
+      <View
+        style={{
+          alignItems: "center",
+        }}
+      >
+        <TouchableOpacity
+          style={styles.validateButton}
+          onPress={handleAddEvent}
+        >
+          <Text style={styles.validateText}>Ajouter l'évènement</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
