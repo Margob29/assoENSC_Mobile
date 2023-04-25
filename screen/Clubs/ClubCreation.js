@@ -1,17 +1,15 @@
 import { useState } from "react";
 import { Text, TextInput, View, TouchableOpacity } from "react-native";
 import styles from "../../theme/styles";
-import ValidationButton from "../../components/ValidationButton";
-import { Picker } from "@react-native-picker/picker";
-import Ionicons from "react-native-vector-icons/Ionicons";
 
+// Formulaire de création des clubs
 export default function ClubCreation(props) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
 
   const handleAddClub = () => {
     const date = new Date();
-    // Ajouter un nouvel événement à la base de données
+    // Ajouter un nouveau club à la base de données
     fetch(`https://enscmobilebureau.azurewebsites.net/api/GroupApi`, {
       method: "POST",
       headers: {
@@ -56,12 +54,14 @@ export default function ClubCreation(props) {
           value={description}
           onChangeText={(text) => setDescription(text)}
           multiline={true}
-        /></View>
-        <View
-          style={{
-            alignItems: "center",
-          }}
-        >
+        />
+      </View>
+      <View
+        style={{
+          alignItems: "center",
+        }}
+      >
+        {/* Bouton d'ajout de club */}
         <TouchableOpacity style={styles.validateButton} onPress={handleAddClub}>
           <Text style={styles.validateText}>Ajouter le club</Text>
         </TouchableOpacity>
@@ -69,5 +69,3 @@ export default function ClubCreation(props) {
     </View>
   );
 }
-
-// items={eventsList.map((item) => ({ label: item.name, value: item.id }))}

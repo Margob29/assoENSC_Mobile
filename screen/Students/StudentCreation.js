@@ -3,11 +3,13 @@ import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import styles from "../../theme/styles";
 
+//Formulaire de création d'un élève
 export default function StudentCreation(props) {
   const [name, setName] = useState("");
   const [mail, setMail] = useState("");
   const [promo, setPromo] = useState("");
   const currentYear = new Date().getFullYear();
+  //Liste des promos possible
   let promoList = [];
   for (let i = 2009; i <= currentYear + 3; i++) {
     promoList.push(i);
@@ -57,6 +59,7 @@ export default function StudentCreation(props) {
           onChangeText={(text) => setMail(text)}
         />
         <Text style={styles.labelForm}>Promo :</Text>
+        {/* Sélection de la promo dans une liste */}
         <Picker
           style={styles.selectForm}
           onValueChange={(value) => setPromo(value)}
@@ -65,6 +68,7 @@ export default function StudentCreation(props) {
             return <Picker.Item key={index} label={`${prom}`} value={prom} />;
           })}
         </Picker>
+        {/* Boutons de création d'un élève */}
         <TouchableOpacity
           style={styles.validateButton}
           onPress={handleAddStudent}

@@ -8,6 +8,7 @@ import EventDetails from "../screen/Events/EventDetails";
 
 const ClubsStack = createNativeStackNavigator();
 
+// Cette fonction permet la navigation entre les différentes pages de clubs (création, détails...)
 export default function ClubsStackNavigator() {
   return (
     <ClubsStack.Navigator independent={true} initialRouteName="ClubsList">

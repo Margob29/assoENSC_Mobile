@@ -2,6 +2,7 @@ import { React, useState } from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import styles from "../theme/styles";
 
+// Carte pour afficher chaque club
 export default function ClubCard(props) {
   const { name, id, description, onDelete } = props;
   return (
@@ -19,6 +20,7 @@ export default function ClubCard(props) {
           <Text>{description}</Text>
         </View>
         <View style={styles.cardBottom}>
+          {/* Lorsqu'on clique sur supprimer cela appelle la fonction onDelete située dans ClubScreen */}
           <TouchableOpacity style={styles.deleteButton} onPress={onDelete}>
             <Text style={styles.deleteText}>Supprimer</Text>
           </TouchableOpacity>

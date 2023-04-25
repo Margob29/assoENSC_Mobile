@@ -1,22 +1,17 @@
 import { React, useState, useEffect } from "react";
-import {
-  Text,
-  View,
-  StyleSheet,
-  FlatList,
-  TouchableOpacity,
-  ScrollView,
-} from "react-native";
+import { Text, View, FlatList, TouchableOpacity } from "react-native";
 import globalStyle from "../../theme/styles";
 import EventCard from "../../components/EventCard";
 
+// Affichage des détails d'un club
 export default function ClubDetails(props) {
   const onDelete = props.route.params.onDelete;
-
   const id = props.route.params.id;
   const [clubDetails, setClubDetails] = useState(null);
   const [eventsList, setEventsList] = useState({});
+
   useEffect(() => {
+    //Récupère tous les évènements associés à ce club
     fetch("https://enscmobilebureau.azurewebsites.net/api/GroupApi/" + id)
       // Accès au contenu JSON de la réponse
       .then((response) => response.json())
@@ -34,11 +29,10 @@ export default function ClubDetails(props) {
       {clubDetails && (
         <>
           <View style={{ margin: 24 }}>
-            <Text style={globalStyle.titleCardDetails}>
-              {clubDetails.name}
-            </Text>
+            <Text style={globalStyle.titleCardDetails}>{clubDetails.name}</Text>
           </View>
           <View style={{ flexDirection: "row" }}>
+            {/* Bouton de modification d'un club */}
             <TouchableOpacity
               style={globalStyle.deleteButton}
               onPress={() => {
@@ -51,6 +45,7 @@ export default function ClubDetails(props) {
             >
               <Text style={globalStyle.deleteText}>Modifier</Text>
             </TouchableOpacity>
+            {/* Bouton de suppression d'un club */}
             <TouchableOpacity
               style={globalStyle.deleteButton}
               onPress={() => {
@@ -65,7 +60,7 @@ export default function ClubDetails(props) {
             <Text style={globalStyle.descriptionTitle}>Description</Text>
             <Text>{clubDetails.description}</Text>
           </View>
-
+          {/* Affichage des évènements créés par le club et possibilité d'aller voir le détail de ces évènements */}
           <FlatList
             data={eventsList}
             renderItem={({ item }) => (

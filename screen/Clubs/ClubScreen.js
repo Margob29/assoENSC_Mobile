@@ -4,10 +4,12 @@ import styles from "../../theme/styles";
 import ClubCard from "../../components/ClubCard";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
+//Affichage de tous les clubs existants
 export default function ClubScreen(props) {
   const [clubList, setClubsList] = useState([]);
 
   useEffect(() => {
+    //Récupère tous les clubs de la base de données
     fetch("https://enscmobilebureau.azurewebsites.net/api/GroupApi/GetGroups")
       // Accès au contenu JSON de la réponse
       .then((response) => response.json())
@@ -34,6 +36,7 @@ export default function ClubScreen(props) {
 
   return (
     <View>
+      {/* Bouton d'ajout d'un club */}
       <TouchableOpacity style={styles.addButton}>
         <Ionicons
           name={"add-circle-outline"}
@@ -42,6 +45,7 @@ export default function ClubScreen(props) {
           onPress={() => props.navigation.navigate("ClubCreation")}
         />
       </TouchableOpacity>
+      {/* Cartes des clubs existants */}
       <FlatList
         data={clubList}
         renderItem={({ item }) => (

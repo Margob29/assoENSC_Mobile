@@ -4,13 +4,13 @@ import {
   TextInput,
   View,
   TouchableOpacity,
-  Button,
   ScrollView,
 } from "react-native";
 import styles from "../../theme/styles";
 import { Picker } from "@react-native-picker/picker";
 import CalendarPicker from "react-native-calendar-picker";
 
+//Formulaire de modification un évènement existant
 export default function EventModification(props) {
   const id = props.route.params.id;
   const [club, setClub] = useState(props.route.params.club);
@@ -27,6 +27,7 @@ export default function EventModification(props) {
     setShowCalendar(false);
   };
 
+  //Récupère les clubs existants
   fetch("https://enscmobilebureau.azurewebsites.net/api/GroupApi/GetGroups")
     // Accès au contenu JSON de la réponse
     .then((response) => response.json())
@@ -78,6 +79,7 @@ export default function EventModification(props) {
           }}
         >
           <Text style={styles.labelForm}>Club créateur de l'évènement</Text>
+          {/* Sélection du club organisateur */}
           <Picker
             style={styles.selectForm}
             selectedValue={club}
@@ -111,7 +113,7 @@ export default function EventModification(props) {
             }}
           >
             <Text style={styles.labelForm}>Date de l'évènement</Text>
-
+            {/* Sélection de la date de l'évènement */}
             <CalendarPicker
               onDateChange={handleDateChange}
               selectedStartDate={date}
@@ -133,6 +135,7 @@ export default function EventModification(props) {
             alignItems: "center",
           }}
         >
+          {/* Bouton de modification de l'évènement */}
           <TouchableOpacity
             style={styles.validateButton}
             onPress={handleUpdateEvent}

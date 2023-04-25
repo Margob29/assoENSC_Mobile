@@ -1,15 +1,8 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  Image,
-  ImageBackground,
-  TouchableOpacity,
-} from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import styles from "../theme/styles";
 
-
+//Page d'accueil lorsqu'on arrive sur l'application
 const Home = (props) => {
   const image = require("../assets/campus.jpg");
 
@@ -18,46 +11,47 @@ const Home = (props) => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>La vie associative de l'ENSC</Text>
+    <View style={styles.containerHome}>
+      <Text style={styles.titleHome}>La vie associative de l'ENSC</Text>
+      {/* Carte permettant d'aller sur les évènements */}
       <TouchableOpacity
-        style={styles.button}
+        style={styles.buttonHome}
         onPress={() => {
           goTo("RootTabNavigator", "EventStackNavigator");
         }}
       >
-        <Image source={image} style={styles.image} />
-        <View style={styles.buttonContainer}>
+        <Image source={image} style={styles.imageHome} />
+        <View style={styles.buttonContainerHome}>
           <Ionicons name={"calendar-outline"} size={25} color={"#560067"} />
-          <Text style={styles.textButton}>Voir les events</Text>
+          <Text style={styles.textButtonHome}>Voir les events</Text>
           <Ionicons name={"calendar-outline"} size={25} color={"#560067"} />
         </View>
       </TouchableOpacity>
-
+      {/* Carte permettant d'aller sur les clubs */}
       <TouchableOpacity
-        style={styles.button}
+        style={styles.buttonHome}
         onPress={() => {
           goTo("RootTabNavigator", "ClubStackNavigator");
         }}
       >
-        <Image source={image} style={styles.image} />
-        <View style={styles.buttonContainer}>
+        <Image source={image} style={styles.imageHome} />
+        <View style={styles.buttonContainerHome}>
           <Ionicons name={"people-outline"} size={25} color={"#560067"} />
-          <Text style={styles.textButton}>Les clubs</Text>
+          <Text style={styles.textButtonHome}>Les clubs</Text>
           <Ionicons name={"people-outline"} size={25} color={"#560067"} />
         </View>
       </TouchableOpacity>
-
+      {/* Carte permettant d'aller sur les élèves */}
       <TouchableOpacity
-        style={styles.button}
+        style={styles.buttonHome}
         onPress={() => {
           goTo("RootTabNavigator", "StudentStackNavigator");
         }}
       >
-        <Image source={image} style={styles.image} />
-        <View style={styles.buttonContainer}>
+        <Image source={image} style={styles.imageHome} />
+        <View style={styles.buttonContainerHome}>
           <Ionicons name={"person-outline"} size={25} color={"#560067"} />
-          <Text style={styles.textButton}>Qui sont les élèves ?</Text>
+          <Text style={styles.textButtonHome}>Qui sont les élèves ?</Text>
           <Ionicons name={"person-outline"} size={25} color={"#560067"} />
         </View>
       </TouchableOpacity>
@@ -66,37 +60,3 @@ const Home = (props) => {
 };
 
 export default Home;
-
-const styles = StyleSheet.create({
-  title: {
-    fontSize: 32,
-    textAlign: "center",
-    fontWeight: "bold",
-    color: "#560067",
-  },
-  container: {
-    paddingTop: 60,
-    alignItems: "center",
-    justifyContent: "space-around",
-  },
-  buttonContainer: {
-    justifyContent: "space-around",
-    flexDirection: "row",
-    paddingVertical: 24,
-  },
-  button: {
-    margin: 20,
-    backgroundColor: "#fff",
-    width: "90%",
-    borderRadius: 20,
-    elevation: 5,
-  },
-  textButton: {
-    fontSize: 20,
-    textAlign: "center",
-  },
-  image: {
-    width: "100%",
-    height: 125,
-  },
-});

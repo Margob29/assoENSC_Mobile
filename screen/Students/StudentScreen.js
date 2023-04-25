@@ -4,10 +4,12 @@ import styles from "../../theme/styles";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import StudentCard from "../../components/StudentCard";
 
+// Affichage de tous les étudiants
 export default function StudentScreen(props) {
   const [studentsList, setStudentsList] = useState([]);
 
   useEffect(() => {
+    // Récupère tous les étudiants de la base de données
     fetch(
       "https://enscmobilebureau.azurewebsites.net/api/StudentApi/GetStudents"
     )
@@ -22,7 +24,7 @@ export default function StudentScreen(props) {
   }, [studentsList]);
 
   const handleDeleteStudent = (studentId) => {
-    // Supprimer l'événement de la base de données
+    // Supprimer l'élève de la base de données
     fetch(
       `https://enscmobilebureau.azurewebsites.net/api/StudentApi/${studentId}`,
       {

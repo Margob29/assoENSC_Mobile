@@ -3,6 +3,7 @@ import { Text, TextInput, View, TouchableOpacity } from "react-native";
 import styles from "../../theme/styles";
 import { Picker } from "@react-native-picker/picker";
 
+//Formulaire de création d'un évènement
 export default function EventCreation(props) {
   const [club, setClub] = useState();
   const [name, setName] = useState("");
@@ -56,6 +57,7 @@ export default function EventCreation(props) {
         }}
       >
         <Text style={styles.labelForm}>Club créateur de l'évènement</Text>
+        {/* Selection d'un choix unique dans une liste de club existant */}
         <Picker
           style={styles.inputForm}
           onValueChange={(value) => setClub(value)}
@@ -84,6 +86,7 @@ export default function EventCreation(props) {
           alignItems: "center",
         }}
       >
+        {/* Bouton d'ajout de l'évènement */}
         <TouchableOpacity
           style={styles.validateButton}
           onPress={handleAddEvent}
@@ -94,5 +97,3 @@ export default function EventCreation(props) {
     </View>
   );
 }
-
-// items={eventsList.map((item) => ({ label: item.name, value: item.id }))}

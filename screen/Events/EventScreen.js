@@ -4,9 +4,11 @@ import styles from "../../theme/styles";
 import EventCard from "../../components/EventCard";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
+//Affichage de tous les évènements disponibles
 export default function EventScreen(props) {
   const [eventsList, setEventsList] = useState([]);
   useEffect(() => {
+    //Récupère tous les évènements de la base de données
     fetch("https://enscmobilebureau.azurewebsites.net/api/EventApi")
       // Accès au contenu JSON de la réponse
       .then((response) => response.json())

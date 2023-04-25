@@ -9,10 +9,12 @@ import { start } from "./RootTabNavigator";
 
 const EventsStack = createNativeStackNavigator();
 
+// Cette fonction permet la navigation entre les différentes pages d'évènements (création, détails...)
 const EventsStackNavigator = (props) => {
   const screenName = props.route.params?.screenName;
 
-  if (screenName !== props.route.name && start !== 1  ) {
+  // Condition pour pouvoit naviguer dans les évènements si ce n'est pas le choix de la page d'accueil
+  if (screenName !== props.route.name && start !== 1) {
     props.navigation.navigate(screenName);
   }
   return (

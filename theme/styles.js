@@ -1,6 +1,26 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
+  // --------- Home ------------
+  titleHome: {
+    fontSize: 32,
+    textAlign: "center",
+    fontWeight: "bold",
+    color: "#560067",
+  },
+
+  containerHome: {
+    paddingTop: 60,
+    alignItems: "center",
+    justifyContent: "space-around",
+  },
+
+  imageHome: {
+    width: "100%",
+    height: 125,
+  },
+
+  // --------- Cards ------------
   cardContainer: {
     elevation: 5,
     margin: 20,
@@ -17,12 +37,47 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 10,
   },
 
-  title: {
-    fontSize: 50,
-    color: "white",
-    textAlign: "center",
+  cardBottom: {
+    backgroundColor: "#efefef",
+    width: "100%",
+    alignItems: "center",
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
   },
 
+  cardImage: {
+    height: 200,
+    width: "90%",
+    margin: 15,
+  },
+
+  titleCardDetails: {
+    fontSize: 32,
+    textAlign: "center",
+    fontWeight: "bold",
+    color: "#560067",
+  },
+
+  // --------- Buttons ------------
+  buttonContainerHome: {
+    justifyContent: "space-around",
+    flexDirection: "row",
+    paddingVertical: 24,
+  },
+
+  buttonHome: {
+    margin: 20,
+    backgroundColor: "#fff",
+    width: "90%",
+    borderRadius: 20,
+    elevation: 5,
+  },
+
+  textButtonHome: {
+    fontSize: 20,
+    textAlign: "center",
+  },
+  
   deleteButton: {
     borderColor: "red",
     borderWidth: 2,
@@ -69,18 +124,29 @@ const styles = StyleSheet.create({
     shadowRadius: 10,
   },
 
-  cardBottom: {
-    backgroundColor: "#efefef",
-    width: "100%",
+  validateButton: {
+    borderColor: "#560067",
+    borderWidth: 2,
+    borderRadius: 15,
+    margin: 24,
+    width: "70%",
     alignItems: "center",
-    borderBottomLeftRadius: 10,
-    borderBottomRightRadius: 10,
+    backgroundColor: "#560067",
+    elevation: 5,
   },
 
-  cardImage: {
-    height: 200,
-    width: "90%",
-    margin: 15,
+  validateText: {
+    color: "white",
+    fontSize: 20,
+    margin: 10,
+    textAlign: "center",
+  },
+
+  // --------- Texts ------------
+  title: {
+    fontSize: 50,
+    color: "white",
+    textAlign: "center",
   },
 
   textDate: {
@@ -107,6 +173,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
 
+  // --------- Forms ------------
   titleForm: {
     fontSize: 50,
     textAlign: "center",
@@ -124,41 +191,23 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 20,
     marginTop: 32,
-    marginBottom:16,
+    marginBottom: 16,
   },
 
   inputForm: {
-    textAlign:'center',
+    textAlign: "center",
     height: 50,
     width: "70%",
     borderRadius: 30,
     backgroundColor: "white",
     elevation: 5,
-    flexWrap:'wrap',
-    marginBottom:32,
+    flexWrap: "wrap",
+    marginBottom: 32,
   },
 
   formContainer: {
     flex: 1,
     justifyContent: "space-around",
-  },
-
-  validateButton: {
-    borderColor: "#560067",
-    borderWidth: 2,
-    borderRadius: 15,
-    margin: 24,
-    width: "70%",
-    alignItems: "center",
-    backgroundColor: "#560067",
-    elevation: 5,
-  },
-
-  validateText: {
-    color: "white",
-    fontSize: 20,
-    margin: 10,
-    textAlign: "center",
   },
 
   selectForm: {
@@ -169,17 +218,11 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
 
+  // --------- Others ------------
   container: {
     flex: 1,
     justifyContent: "flex-start",
     alignItems: "center",
-  },
-
-  titleCardDetails: {
-    fontSize: 32,
-    textAlign: "center",
-    fontWeight: "bold",
-    color: "#560067",
   },
 
   subtitle: {
@@ -196,6 +239,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "#560067",
   },
+
   description: {
     margin: 16,
     justifyContent: "space-between",
@@ -207,6 +251,7 @@ const styles = StyleSheet.create({
     width: "90%",
     height: 200,
   },
+
   group: {
     textAlign: "center",
     borderColor: "green",
@@ -215,11 +260,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 2,
     width: "25%",
-  },
-  cardImage: {
-    height: 200,
-    width: "90%",
-    margin: 15,
   },
 });
 

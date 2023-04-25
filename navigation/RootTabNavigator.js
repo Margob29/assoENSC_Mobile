@@ -12,6 +12,7 @@ import { useEffect } from "react";
 const Nav = createBottomTabNavigator();
 export let start = 0;
 
+// Cette fonction permet la navigation via la navbar en bas de l'écran (navigation entre clubs, events et students)
 export default function RootTabNavigator(props) {
   const name = props.route.params.screenName;
   screenName =

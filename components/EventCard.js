@@ -2,8 +2,10 @@ import { React, useState } from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import styles from "../theme/styles";
 
+// Carte pour présenter chaque event
 export default function EventCard(props) {
   const { name, id, onDelete, date } = props;
+  //Création du format date que l'on souhaite
   const options = { day: "numeric", month: "numeric", year: "numeric" };
 
   return (
@@ -20,6 +22,7 @@ export default function EventCard(props) {
           {new Date(date).toLocaleDateString("fr-FR", options)}
         </Text>
         <View style={styles.cardBottom}>
+          {/* Lorsqu'on clique sur supprimer cela appelle la fonction onDelete située dans EventScreen */}
           <TouchableOpacity style={styles.deleteButton} onPress={onDelete}>
             <Text style={styles.deleteText}>Supprimer</Text>
           </TouchableOpacity>

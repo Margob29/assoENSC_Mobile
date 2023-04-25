@@ -1,15 +1,8 @@
 import { React, useState, useEffect } from "react";
-import {
-  Text,
-  View,
-  StyleSheet,
-  Image,
-  TouchableOpacity,
-  ScrollView,
-} from "react-native";
+import { Text, View, Image, TouchableOpacity, ScrollView } from "react-native";
 import globalStyle from "../../theme/styles";
-import { event } from "react-native-reanimated";
 
+//Affichage des détails d'un évènement
 export default function EventDetails(props) {
   const onDelete = props.route.params.onDelete;
 
@@ -17,6 +10,7 @@ export default function EventDetails(props) {
   const [eventDetails, setEventDetails] = useState(null);
 
   useEffect(() => {
+    //Récupère les détails de l'évènement
     fetch("https://enscmobilebureau.azurewebsites.net/api/EventApi/" + id)
       // Accès au contenu JSON de la réponse
       .then((response) => response.json())
@@ -28,6 +22,7 @@ export default function EventDetails(props) {
       });
   }, []);
 
+  // Création du format de la date
   const options = { day: "numeric", month: "long", year: "numeric" };
 
   return (
@@ -46,14 +41,12 @@ export default function EventDetails(props) {
                 )}
               </Text>
             </View>
-
             <View style={globalStyle.description}>
               <Text style={globalStyle.descriptionTitle}>Description</Text>
               <Text>{eventDetails.description}</Text>
 
               <Text style={globalStyle.group}>{eventDetails.group.name}</Text>
             </View>
-
             <Image
               style={globalStyle.cardImage}
               source={require("../../assets/interpromo.jpg")}
@@ -61,6 +54,7 @@ export default function EventDetails(props) {
           </>
         )}
         <View style={{ flexDirection: "row" }}>
+          {/* Bouton de suppression d'évènements */}
           <TouchableOpacity
             style={globalStyle.deleteButton}
             onPress={() => {
@@ -75,6 +69,7 @@ export default function EventDetails(props) {
           >
             <Text style={globalStyle.deleteText}>Modifier</Text>
           </TouchableOpacity>
+          {/* Bouton de suppression d'évènements */}
           <TouchableOpacity
             style={globalStyle.deleteButton}
             onPress={() => {

@@ -11,6 +11,7 @@ import styles from "../../theme/styles";
 import { Picker } from "@react-native-picker/picker";
 import CalendarPicker from "react-native-calendar-picker";
 
+//Formulaire de modification d'un club
 export default function ClubUpdate(props) {
   const id = props.route.params.id;
   const [name, setName] = useState(props.route.params.name);
@@ -79,6 +80,7 @@ export default function ClubUpdate(props) {
             alignItems: "center",
           }}
         >
+          {/* Bouton de modification d'un club */}
           <TouchableOpacity
             style={styles.validateButton}
             onPress={handleUpdateClub}

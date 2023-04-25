@@ -3,6 +3,7 @@ import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import styles from "../../theme/styles";
 
+//Formulaire de modification d'un élève
 export default function StudentCreation(props) {
   const id = props.route.params.id;
   const [name, setName] = useState(props.route.params.name);
@@ -62,6 +63,7 @@ export default function StudentCreation(props) {
           return <Picker.Item key={index} label={`${prom}`} value={prom} />;
         })}
       </Picker>
+      {/* Bouton de modification d'un élève */}
       <TouchableOpacity
         style={styles.validateButton}
         onPress={handleUpdateStudent}

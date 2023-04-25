@@ -6,6 +6,7 @@ import StudentUpdate from "../screen/Students/StudentUpdate";
 
 const StudentsStack = createNativeStackNavigator();
 
+// Cette fonction permet la navigation entre les différentes pages d'élèves (création, modification...)
 export default function StudentsStackNavigator() {
   return (
     <StudentsStack.Navigator independent={true} initialRouteName="StudentsList">
