@@ -1,8 +1,9 @@
 import { React, useState, useEffect } from "react";
-import { Text, View, Button, FlatList, TouchableOpacity } from "react-native";
+import { Text, View, SafeAreaView, FlatList, TouchableOpacity } from "react-native";
 import styles from "../../theme/styles";
 import ClubCard from "../../components/ClubCard";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import { ScrollView } from "react-native-gesture-handler";
 
 //Affichage de tous les clubs existants
 export default function ClubScreen(props) {
@@ -35,38 +36,38 @@ export default function ClubScreen(props) {
   };
 
   return (
-    <View>
-      {/* Bouton d'ajout d'un club */}
-      <TouchableOpacity style={styles.addButton}>
-        <Ionicons
-          name={"add-circle-outline"}
-          size={80}
-          color={"#560067"}
-          onPress={() => props.navigation.navigate("ClubCreation")}
-        />
-      </TouchableOpacity>
-      {/* Cartes des clubs existants */}
-      <FlatList
-        data={clubList}
-        renderItem={({ item }) => (
-          <TouchableOpacity
-            onPress={() => {
-              props.navigation.navigate("ClubDetails", {
-                id: item.id,
-                onDelete: () => handleDeleteClub(item.id),
-              });
-            }}
-          >
-            <ClubCard
-              root={props.navigation}
-              name={item.name}
-              id={item.id}
-              description={item.description}
-              onDelete={() => handleDeleteClub(item.id)}
-            />
-          </TouchableOpacity>
-        )}
-      />
-    </View>
+      <View>
+        {/* Bouton d'ajout d'un club */}
+        <TouchableOpacity style={styles.addButton}>
+          <Ionicons
+            name={"add-circle-outline"}
+            size={80}
+            color={"#560067"}
+            onPress={() => props.navigation.navigate("ClubCreation")}
+          />
+        </TouchableOpacity>
+        {/* Cartes des clubs existants */}
+          <FlatList
+            data={clubList}
+            renderItem={({ item }) => (
+              <TouchableOpacity
+                onPress={() => {
+                  props.navigation.navigate("ClubDetails", {
+                    id: item.id,
+                    onDelete: () => handleDeleteClub(item.id),
+                  });
+                }}
+              >
+                <ClubCard
+                  root={props.navigation}
+                  name={item.name}
+                  id={item.id}
+                  description={item.description}
+                  onDelete={() => handleDeleteClub(item.id)}
+                />
+              </TouchableOpacity>
+            )}
+          />
+      </View>
   );
 }
