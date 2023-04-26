@@ -5,6 +5,7 @@ import EventCard from "../../components/EventCard";
 
 // Affichage des détails d'un club
 export default function ClubDetails(props) {
+  console.log(props);
   const onDelete = props.route.params.onDelete;
   const id = props.route.params.id;
   const [clubDetails, setClubDetails] = useState(null);
