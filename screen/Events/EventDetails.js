@@ -45,7 +45,16 @@ export default function EventDetails(props) {
               <Text style={globalStyle.descriptionTitle}>Description</Text>
               <Text>{eventDetails.description}</Text>
 
-              <Text style={globalStyle.group}>{eventDetails.group.name}</Text>
+              <TouchableOpacity
+                onPress={() => {
+                  props.navigation.navigate("ClubDetails", {
+                    id: eventDetails.group.id,
+                    onDelete: () => handleDeleteClub(eventDetails.group.id),
+                  });
+                }}
+              >
+                <Text style={globalStyle.group}>{eventDetails.group.name}</Text>
+              </TouchableOpacity>
             </View>
             <Image
               style={globalStyle.cardImage}

@@ -16,8 +16,12 @@ export default function ClubCard(props) {
           source={require("../assets/interpromo.jpg")}
         />
         <View>
-          <Text>Description</Text>
-          <Text>{description}</Text>
+          <Text style={[styles.textDate, { textAlign: "center" }]}>
+            Description
+          </Text>
+          <Text style={{ textAlign: "center", padding: 25 }}>
+            {description}
+          </Text>
         </View>
         <View style={styles.cardBottom}>
           {/* Lorsqu'on clique sur supprimer cela appelle la fonction onDelete située dans ClubScreen */}

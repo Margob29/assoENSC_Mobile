@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: "center",
   },
-  
+
   deleteButton: {
     borderColor: "red",
     borderWidth: 2,
@@ -148,6 +148,13 @@ const styles = StyleSheet.create({
     color: "white",
     textAlign: "center",
   },
+
+  /*
+  secondTitle: {
+    fontSize: 16,
+    color: 'black',
+    textAlign: "center",
+  },*/
 
   textDate: {
     fontSize: 20,
